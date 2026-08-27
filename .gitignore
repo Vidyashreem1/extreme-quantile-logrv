@@ -1,0 +1,23 @@
+# R
+.RData
+.Rhistory
+.Rproj.user/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Generated simulation outputs
+simulations/simulation_outputs_*/
+
+# Rainfall inputs and generated outputs
+rainfall-analysis/data/*
+!rainfall-analysis/data/README.md
+rainfall-analysis/outputs/
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+*.log
