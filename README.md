@@ -5,6 +5,8 @@ quantile extrapolation for log-regularly varying tails. It includes the
 unconditional simulation study and the conditional Western Ghats rainfall
 analysis.
 
+The accompanying manuscript is authored by Vidyashree M and Sreenivasan Ravi.
+
 ## Repository Structure
 
 - `simulations/`: RV/LRV simulation drivers, classical estimators, and the
