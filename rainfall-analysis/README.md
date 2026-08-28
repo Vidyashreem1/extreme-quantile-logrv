@@ -8,6 +8,8 @@ The main scripts are:
 - `cenn_ldnn_lograinfall_engine.py`: fits the conditional extrapolation neural networks and writes candidate and selected estimates.
 - `08.CENN_LDNN_LogRainfall_Diagnostics.R`: creates diagnostic summaries and figures from the fitted output.
 
+The rainfall application uses the [INDmet high-resolution daily precipitation and temperature dataset for India](https://doi.org/10.5281/zenodo.15430548) developed by Kushwaha et al. (2025). The raw INDmet files are not redistributed in this repository. They should be obtained from the original source and arranged according to the structure described below.
+
 ## Data Layout
 
 The analysis uses gridded daily rainfall data and grid-level covariates.
@@ -17,8 +19,7 @@ The analysis uses gridded daily rainfall data and grid-level covariates.
 - `outputs/cenn_ldnn_lograinfall/`: generated output folder for the fitted
   CENN/LDNN analysis.
 
-The raw rainfall files are not included in the repository. Their locations
-can instead be supplied through the environment variables described below.
+Alternative input locations can be supplied through the environment variables described below.
 
 ## Statistical Design
 
@@ -29,7 +30,7 @@ can instead be supplied through the environment variables described below.
   - mid_range: `100 <= alt_mean < 600`
   - hilly: `alt_mean >= 600`
 - Neighbourhoods: for each target grid, the pooled sample is formed using Mahalanobis nearest neighbours in `(longitude, latitude, alt_mean)`.
-- Holdout value: the maximum positive rainfall value in the target neighbourhood is removed before fitting and retained as the local held-out extreme.
+- Held-out value: the maximum positive rainfall value in the target neighbourhood is removed before fitting and retained as the local held-out extreme.
 - Training sample: the remaining positive rainfall observations define the
   local sample and are transformed to `Y = log(Precipitation)`. Observations
   with rainfall exceeding 1 mm enter the spacing construction, ensuring that
