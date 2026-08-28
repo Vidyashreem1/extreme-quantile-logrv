@@ -27,7 +27,6 @@ The analyses use R and Python. The principal R packages are:
 - `processx`
 - `reticulate`
 - `scales`
-- `viridis`
 
 The Python dependencies are listed in `requirements.txt`.
 
