@@ -237,7 +237,6 @@ R packages:
 - `ggplot2`
 - `processx`
 - `scales`
-- `viridis`
 
 Python packages:
 
